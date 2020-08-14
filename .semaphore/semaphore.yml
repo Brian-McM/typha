@@ -1,5 +1,6 @@
 version: v1.0
 name: Typha
+
 execution_time_limit:
   hours: 2
 
@@ -9,18 +10,18 @@ agent:
     os_image: ubuntu1804
 
 blocks:
-- name: Build
-  task:
-    jobs:
-      - name: Build
-        commands:
-          - checkout
+  - name: 'Build'
+    task:
+      jobs:
+        - name: Build
+          commands:
+            - checkout
 #          - cache restore go-pkg-cache
 #          - cache restore go-mod-cache
 #          - 'cache store bin-${SEMAPHORE_GIT_SHA} bin'
 #          - cache store go-pkg-cache .go-pkg-cache
 #          - 'cache store go-mod-cache ${HOME}/go/pkg/mod/cache'
-          - make build
+            - make build
 
 #- name: Test
 #  dependencies: ["Build"]
