@@ -23,17 +23,17 @@ blocks:
             - 'cache store go-mod-cache ${HOME}/go/pkg/mod/cache'
             - make build
 
-#- name: Test
-#  dependencies: ["Build"]
-#  task:
-#    prologue:
-#      commands:
-#        - checkout
-#        - cache restore go-pkg-cache
-#        - cache restore go-mod-cache
-#    jobs:
-#      - name: Tests
-#        commands:
-#          - make ci
+  - name: Test
+    dependencies: ["Build"]
+    task:
+      prologue:
+        commands:
+          - checkout
+          - cache restore go-pkg-cache
+          - cache restore go-mod-cache
+      jobs:
+        - name: Tests
+          commands:
+            - make ci
 
 
