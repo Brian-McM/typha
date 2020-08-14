@@ -16,11 +16,11 @@ blocks:
         - name: Build
           commands:
             - checkout
-#          - cache restore go-pkg-cache
-#          - cache restore go-mod-cache
-#          - 'cache store bin-${SEMAPHORE_GIT_SHA} bin'
-#          - cache store go-pkg-cache .go-pkg-cache
-#          - 'cache store go-mod-cache ${HOME}/go/pkg/mod/cache'
+            - cache restore go-pkg-cache
+            - cache restore go-mod-cache
+            - 'cache store bin-${SEMAPHORE_GIT_SHA} bin'
+            - cache store go-pkg-cache .go-pkg-cache
+            - 'cache store go-mod-cache ${HOME}/go/pkg/mod/cache'
             - make build
 
 #- name: Test
