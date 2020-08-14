@@ -11,6 +11,7 @@ agent:
 
 blocks:
   - name: 'Build'
+    dependencies: []
     task:
       jobs:
         - name: Build
