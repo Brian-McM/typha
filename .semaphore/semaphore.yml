@@ -8,7 +8,6 @@ agent:
     os_image: ubuntu1804
 blocks:
 - name: Build
-  dependencies: []
   task:
     jobs:
       - name: Build
