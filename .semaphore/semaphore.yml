@@ -8,6 +8,7 @@ agent:
     os_image: ubuntu1804
 blocks:
 - name: Build
+  dependencies: []
   task:
     jobs:
       - name: Build
@@ -19,9 +20,9 @@ blocks:
           - cache store go-pkg-cache .go-pkg-cache
           - 'cache store go-mod-cache ${HOME}/go/pkg/mod/cache'
           - make build
+
 - name: Test
-  dependencies:
-    - Build
+  dependencies: ["Build"]
   task:
     prologue:
       commands:
