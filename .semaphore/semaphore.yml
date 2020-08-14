@@ -22,12 +22,12 @@ blocks:
 - name: Test
   dependencies:
     - Build
-  prologue:
-    commands:
-      - checkout
-      - cache restore go-pkg-cache
-      - cache restore go-mod-cache
   task:
+    prologue:
+      commands:
+        - checkout
+        - cache restore go-pkg-cache
+        - cache restore go-mod-cache
     jobs:
       - name: Tests
         commands:
